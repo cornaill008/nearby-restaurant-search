@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD54A"/>
+      <stop offset="0.45" stop-color="#FF9A2E"/>
+      <stop offset="1" stop-color="#EF4B3A"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="#FFFFFF"/>
+  <g transform="translate(0 -8)">
+    <path d="M300 546 C300 546 128 386 128 262 A172 172 0 0 1 472 262 C472 386 300 546 300 546 Z"
+          fill="url(#fill)" stroke="#2E9E4F" stroke-width="24" stroke-linejoin="round"/>
+    <g transform="translate(302 262) scale(1.35) translate(-302 -257)">
+    <!-- 포크 -->
+    <g stroke="#111111" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M241 176 V214 Q241 240 262 240 Q283 240 283 214 V176" stroke-width="9"/>
+      <path d="M262 176 V240" stroke-width="9"/>
+      <path d="M262 236 V338" stroke-width="14"/>
+    </g>
+    <!-- 숟가락 -->
+    <ellipse cx="342" cy="208" rx="24" ry="34" fill="#111111"/>
+    <path d="M342 236 V338" stroke="#111111" stroke-width="14" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
