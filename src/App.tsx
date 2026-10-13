@@ -4,6 +4,7 @@ import { createBrowserLocationProvider } from './adapters/browserLocation'
 import { createKakaoMapView } from './adapters/kakaoMapView'
 import { createLazyPlaceSearch } from './adapters/lazyPlaceSearch'
 import { loadKakaoSdk } from './adapters/loadKakaoSdk'
+import { createTossLocationProvider } from './adapters/tossLocation'
 import { DetailPanel } from './components/DetailPanel'
 import { MapPanel } from './components/MapPanel'
 import { RestaurantList } from './components/RestaurantList'
@@ -17,9 +18,12 @@ export interface AppServices {
   loadMapView: (container: HTMLElement) => Promise<MapView>
 }
 
+// 앱인토스용 빌드(vite --mode toss)에서는 토스 SDK로 위치를 조회한다.
+const IS_TOSS_BUILD = import.meta.env.MODE === 'toss'
+
 function createDefaultServices(): AppServices {
   return {
-    location: createBrowserLocationProvider(),
+    location: IS_TOSS_BUILD ? createTossLocationProvider() : createBrowserLocationProvider(),
     search: createLazyPlaceSearch(() => loadKakaoSdk()),
     loadMapView: async (container) => createKakaoMapView(await loadKakaoSdk(), container),
   }
