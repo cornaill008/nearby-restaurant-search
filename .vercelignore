@@ -1,0 +1,6 @@
+.env.local
+.env*.local
+.claude
+openspec
+node_modules
+dist
